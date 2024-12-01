@@ -4,10 +4,31 @@ Welcome to the repository for the official Bluesky PDS (Personal Data Server). T
 
 Head over to the [AT Protocol PDS Admins Discord](https://discord.gg/e7hpHxRfBP) to chat with other folks hosting instances and get important updates about the PDS distribution!
 
-**Note**:
-I have extended this image to have opentelemetry autoinstrumentation for tracing.
-Built container image is hosted at hub.docker.com/r/dkbhadeshiya/atproto-pds.
-I will try my best to keep the image updated with the latest version of the official image, but no promises🤞🏻
+
+## Changes from upstream
+This image contains the PDS with OpenTelemetry Auto Instrumentation.
+
+Built docker image is hosted at [Docker Hub](https://hub.docker.com/r/dkbhadeshiya/atproto-pds).
+You can use the image or build one yourself.
+Docker image tagging will be consistent with the `@atproto/pds` package version.
+
+
+This is done for my personal PDS where I am using [honeycomb.io](https://honeycomb.io).
+
+In order to use this image, add your OTEL variables to `pds.env` file inside `/pds` folder.
+```
+OTEL_SERVICE_NAME=
+OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+OTEL_EXPORTER_OTLP_ENDPOINT=""
+OTEL_EXPORTER_OTLP_HEADERS=""
+```
+
+It currently supports `http` or `protobuf` exporters.
+
+### Additional packages installed
+- @opentelemetry/auto-instrumentations-node
+- @opentelemetry/exporter-trace-otlp-http
+- @opentelemetry/sdk-node
 
 ## Table of Contents
 
