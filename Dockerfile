@@ -1,4 +1,4 @@
-FROM node:20.11-alpine3.18 as build
+FROM node:20.11-alpine3.18 AS build
 
 RUN npm install -g pnpm
 
@@ -24,7 +24,7 @@ ENV NODE_ENV=production
 # potential perf issues w/ io_uring on this version of node
 ENV UV_USE_IO_URING=0
 
-CMD ["node", "--enable-source-maps", "index.js"]
+CMD ["node", "-r", "./tracing.js","--enable-source-maps", "index.js"]
 
 LABEL org.opencontainers.image.source=https://github.com/bluesky-social/pds
 LABEL org.opencontainers.image.description="AT Protocol PDS"
