@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 services:
   caddy:
     container_name: caddy
@@ -16,7 +16,7 @@ services:
         target: /etc/caddy
   pds:
     container_name: pds
-    image: ghcr.io/bluesky-social/pds:0.4
+    image: dkbhadeshiya/atproto-pds:0.4.74
     network_mode: host
     restart: unless-stopped
     volumes:

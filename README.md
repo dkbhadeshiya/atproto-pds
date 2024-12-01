@@ -4,6 +4,11 @@ Welcome to the repository for the official Bluesky PDS (Personal Data Server). T
 
 Head over to the [AT Protocol PDS Admins Discord](https://discord.gg/e7hpHxRfBP) to chat with other folks hosting instances and get important updates about the PDS distribution!
 
+**Note**:
+I have extended this image to have opentelemetry autoinstrumentation for tracing.
+Built container image is hosted at hub.docker.com/r/dkbhadeshiya/atproto-pds.
+I will try my best to keep the image updated with the latest version of the official image, but no promises🤞🏻
+
 ## Table of Contents
 
 <!-- markdown-toc -i README.md -->
